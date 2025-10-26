@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak - Form Konsultasi</title>
+  <link rel="stylesheet" href="style.css" />
+ </head>
+<body>
+  <header>
+    <h1>Muhammad Ikram Hilmi</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="portfolio.html">Portofolio</a></li>
+        <li><a href="contact.html" class="active">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact">
+   <h2 class="form-title">Form Konsultasi Teknologi</h2>
+
+    <form>
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama anda" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Masukkan email anda" required />
+
+      <label for="topik">Topik Konsultasi:</label>
+      <select id="topik" name="topik">
+        <option value="web">Pembuatan Website</option>
+        <option value="app">Aplikasi Mobile</option>
+        <option value="uiux">Desain UI/UX</option>
+      </select>
+
+      <label for="pesan">Pesan:</label>
+      <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan anda"></textarea>
+
+      <div class="radio-group">
+        <p>Apakah Anda pernah bekerja sama dengan saya?</p>
+        <label><input type="radio" name="pengalaman" value="ya" /> Ya</label>
+        <label><input type="radio" name="pengalaman" value="tidak" /> Tidak</label>
+      </div>
+
+      <label><input type="checkbox" required /> Saya setuju dengan kebijakan privasi</label>
+
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ikram Hilmi | <a href="https://www.itpln.ac.id" target="_blank">ITPLN</a></p>
+  </footer>
+</body>
+</html>

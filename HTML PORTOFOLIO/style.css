@@ -1,0 +1,264 @@
+/* ====== STYLE DASAR ====== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Animasi umum */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ====== HEADER ====== */
+header {
+  background: #1a1a1a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+header h1 { font-size: 22px; }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #4CAF50;
+  bottom: -3px;
+  left: 0;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: #4CAF50;
+}
+
+/* ====== HERO SECTION ====== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 60px 40px;
+  background: linear-gradient(to right, #f2f2f2, #e8f5e9);
+  animation: fadeIn 1s ease;
+}
+
+.hero img {
+  width: 200px;
+  border-radius: 50%;
+  margin-right: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: floatUp 1s ease;
+}
+
+.hero-text {
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== ABOUT ====== */
+.about, .skills, .portfolio, .contact {
+  padding: 40px;
+  animation: fadeIn 1s ease;
+}
+
+/* ====== SKILLS ====== */
+.skill-bar {
+  margin-bottom: 15px;
+}
+
+.progress {
+  width: 100%;
+  background: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.fill {
+  background: #4CAF50;
+  height: 10px;
+  border-radius: 5px;
+  width: 0;
+  animation: grow 2s forwards;
+}
+
+@keyframes grow {
+  from { width: 0; }
+  to { width: var(--width, 80%); }
+}
+
+/* ====== TABEL PORTOFOLIO ====== */
+.table-container {
+  overflow-x: auto;
+  animation: fadeIn 1s ease;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+tr:hover {
+  background: #f1f8e9;
+}
+
+/* ====== FORM KONTAK ====== */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInUp 1s ease;
+}
+
+input, select, textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px #a5d6a7;
+}
+
+button {
+  background: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+  width: auto;
+  min-width: 150px;
+  margin-top: 10px;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ====== FOOTER ====== */
+footer {
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  animation: fadeIn 1s ease;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero img {
+    margin: 0 0 20px 0;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ====== SCROLL ANIMATION ====== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.form-title {
+  text-align: center;      /* biar teks di tengah */
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #222;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
